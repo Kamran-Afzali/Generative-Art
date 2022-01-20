@@ -123,3 +123,93 @@ p0 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which i
     alpha = c(1,1),
     background = "#4D7186"
   )
+p0
+
+
+p1 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which is useful for creating simulations or random objects that can be reproduced.
+  scene_discs(
+    rings = 10, 
+    points = 50000, 
+    size = 50
+  ) %>%
+  mutate(ind = 1:n()) %>%
+  unfold_warp(
+    iterations = 10,
+    scale = .5, 
+    output = "layer" 
+  ) %>%
+  unfold_breeze(
+    iterations = 5,
+    scale = .01
+  )%>%
+  style_pop(
+    palette = "acton",
+    color = "#E0542E",
+    colour = "ind",
+    background = "warhol"
+  )
+p1
+
+
+
+p2 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which is useful for creating simulations or random objects that can be reproduced.
+  scene_discs(
+    rings = 10, 
+    points = 5000, 
+    size = 50
+  ) %>%
+  mutate(ind = 1:n()) %>%
+  unfold_warp(
+    iterations = 10,
+    scale = .5, 
+    output = "layer" 
+  ) %>%
+  unfold_tempest(
+    iterations = 5,
+    scale = .01
+  )%>%
+  style_pop(
+    palette = "acton",
+    background = "warhol"
+  )
+p2
+
+
+
+p3 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which is useful for creating simulations or random objects that can be reproduced.
+  scene_bubbles(
+    n = 4, 
+    grain = 500
+  ) %>%
+  unfold_warp(
+    iterations = 10,
+    scale = .5, 
+    output = "layer" 
+  ) %>%
+  unfold_tempest(
+    iterations = 5,
+    scale = .01
+  )%>%
+  style_pop(
+    palette = "acton",
+    background = "warhol"
+  )
+p3
+
+p4 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which is useful for creating simulations or random objects that can be reproduced.
+  scene_bubbles(
+    n = 5, 
+    grain = 50
+  ) %>%
+  unfold_loop(
+    points = 10,
+    radius = 1
+  ) %>%
+  mutate(seed = 100) %>%
+  unfold_tempest(
+    iterations = 10,
+    scale = .01
+  )%>%
+  style_walk(
+  )
+p4
