@@ -1,19 +1,19 @@
-http://fronkonstin.com
+#http://fronkonstin.com
 
 library(tidyverse)
 seq(from=-10, to=10, by = 0.05) %>%
   expand.grid(x=., y=.) %>%
   ggplot(aes(x=(x^2+pi*cos(y)^2), y=(y+pi*sin(x)))) +
-  geom_point(alpha=.05, shape=20, size=0)+
-  theme_void()+coord_fixed()
+  geom_point(alpha=.05, shape=20, size=0, colour = "white")+
+  theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 
 
 library(tidyverse)
-seq(from=-5, to=5, by = 0.04) %>%
+seq(from=-pi, to=pi, by = 0.01) %>%
   expand.grid(x=., y=.) %>%
   ggplot(aes(x=(x+pi*sin(-y)), y=(y+pi*sin(x)))) +
-  geom_point(alpha=.1, shape=20, size=0) + 
-  theme_void()
+  geom_point(alpha=.1, shape=20, size=0, colour = "white") + 
+  theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 
 library(ggplot2)
 n=500
@@ -213,3 +213,70 @@ p4 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which i
   style_walk(
   )
 p4
+
+
+
+devtools::install_github("cutterkom/generativeart")
+library(generativeart)
+my_formula <- list(
+  x = quote(runif(1, -1, 10) * x_i^2 - sin(y_i^2)),
+  y = quote(runif(1, -1, 10) * y_i^3 - cos(x_i^2) * y_i^4)
+)
+df=generate_data(my_formula)
+generate_plot(df,polar=F)
+
+
+
+library(ambient)
+library(dplyr)
+# set the paths
+IMG_DIR <- "img/"
+IMG_SUBDIR <- "everything/"
+IMG_SUBDIR2 <- "handpicked/"
+IMG_PATH <- paste0(IMG_DIR, 
+                   IMG_SUBDIR)
+LOGFILE_DIR <- "logfile/"
+LOGFILE <- "logfile.csv"
+LOGFILE_PATH <- paste0(LOGFILE_DIR, 
+                       LOGFILE)
+# create the directory structure
+generativeart::setup_directories(IMG_DIR, 
+                                 IMG_SUBDIR, 
+                                 IMG_SUBDIR2, 
+                                 LOGFILE_DIR)
+# include a specific formula, for example:
+my_formula <- list(
+  x = quote(runif(1, -1, 10) * x_i^2 - sin(y_i^2)),
+  y = quote(runif(1, -1, 10) * y_i^3 - cos(x_i^2) * y_i^4)
+)
+
+
+
+# call the main function to create five images with a polar coordinate system
+generativeart::generate_img(formula = my_formula, 
+                            nr_of_img = 5, # set the number of iterations
+                            polar = TRUE, 
+                            filetype = "png", 
+                            color = "#c1a06e", 
+                            background_color = "#1a3657")
+
+my_formula2 <- list(
+  x = quote(x_i+pi*sin(-y_i)),
+  y = quote(y_i+pi*sin(x_i))
+)
+
+
+df2=generate_data(my_formula2)
+
+
+df%>%
+  ggplot(aes(x=x, y=y)) +
+  geom_point(alpha=.1, shape=20, size=0, colour = "white") + 
+  theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
+
+generativeart::generate_img(formula = my_formula2, 
+                            nr_of_img = 5, # set the number of iterations
+                            polar = F, 
+                            filetype = "png", 
+                            color = "white", 
+                            background_color = "black")
