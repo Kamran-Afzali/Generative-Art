@@ -1,12 +1,43 @@
 #http://fronkonstin.com
 
 library(tidyverse)
-seq(from=-10, to=10, by = 0.05) %>%
+seq(from=0, to=10, by = 0.01) %>%
   expand.grid(x=., y=.) %>%
-  ggplot(aes(x=(x^2+pi*cos(y)^2), y=(y+pi*sin(x)))) +
+  ggplot(aes(x=x, y=(y+pi*sin(x)))) +
   geom_point(alpha=.05, shape=20, size=0, colour = "white")+
   theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 
+library(tidyverse)
+seq(from=0, to=10, by = 0.01) %>%
+  expand.grid(x=., y=.) %>%
+  ggplot(aes(x=(x+pi*sin(y)), y=(y+pi*sin(x)))) +
+  geom_point(alpha=.05, shape=20, size=0, colour = "white")+
+  theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
+
+
+
+
+library(tidyverse)
+seq(from=-10, to=10, by = 0.05) %>%
+  expand.grid(x=., y=.) %>%
+  ggplot(aes(x=(x^(2)+pi*cos(y)^(2)), y=(y+pi*sin(x)))) +
+  geom_point(alpha=.05, shape=20, size=0, colour = "white")+
+  theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
+
+
+library(tidyverse)
+seq(from=0, to=10, by = 0.01) %>%
+  expand.grid(x=., y=.) %>%
+  ggplot(aes(x=(x^(1/3)+pi*cos(y)^(1/3)), y=(y+pi*sin(x)))) +
+  geom_point(alpha=.05, shape=20, size=0, colour = "white")+
+  theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
+
+library(tidyverse)
+seq(from=-10, to=10, by = 0.01) %>%
+  expand.grid(x=., y=.) %>%
+  ggplot(aes(x=(x+pi*cos(-y)), y=(y+pi*sin(x)))) +
+  geom_point(alpha=.05, shape=20, size=0, colour = "white")+
+  theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 
 library(tidyverse)
 seq(from=-pi, to=pi, by = 0.01) %>%
@@ -28,22 +59,29 @@ library(tidyverse)
 seq(-3,3,by=.01) %>%
   expand.grid(x=., y=.) %>%
   ggplot(aes(x=(1-x-sin(y^2)), y=(1+y-cos(x^2)))) +
-  geom_point(alpha=.05, shape=20, size=0,colour="pink")+
+  geom_point(alpha=.05, shape=20, size=0,colour="white")+
   theme_void()+
-  coord_polar()
+  coord_polar()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 
 
 library(tidyverse)
 seq(-3,3,by=.01) %>%
   expand.grid(x=., y=.) %>%
   ggplot(aes(x=(x^3+sin(x)), y=(y^3-cos(y)))) +
-  geom_point(alpha=.1, shape=20, size=0)+
+  geom_point(alpha=.1, shape=20, size=1, colour = 'white')+
   theme_void()+
-  coord_polar()
+  coord_polar()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 
 
 library(tidyverse)
-tibble(x=accumulate(1:230,~.x+((0.98)^.y)*cos(.y*(pi/2)^1.015),.init=0),y=accumulate(1:230,~.x+((0.98)^.y)*sin(.y*(pi/2)^1.015),.init=0))%>%
+tibble(x=accumulate(1:25000,~.x+((0.98)^.y)*cos(.y*(pi)^1.015),.init=0),y=accumulate(1:25000,~.x+((0.98)^.y)*sin(.y*(pi)^1.015),.init=0))%>%
+  ggplot(aes(x,y)) +
+  geom_point(alpha=.1, shape=20, size=1, colour = 'white')+
+  theme_void()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
+
+
+library(tidyverse)
+tibble(x=accumulate(1:2300,~.x+((0.98)^.y)*cos(.y*(pi/2)^1.015),.init=0),y=accumulate(1:2300,~.x+((0.98)^.y)*sin(.y*(pi/2)^1.015),.init=0))%>%
   ggplot(aes(x,y)) + geom_polygon() + coord_equal() + theme_void()
 
 
