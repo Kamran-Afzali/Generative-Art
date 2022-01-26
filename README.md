@@ -6,8 +6,6 @@ https://generative.substack.com/p/generative-art-and-r
 
 https://flowingdata.com/2021/08/18/generative-art-with-r/
 
-https://rpubs.com/izzy-shehan/750493
-
 https://github.com/koenderks/aRtsy
 
 https://blog.djnavarro.net/posts/2021-07-08_generative-art-in-r/
