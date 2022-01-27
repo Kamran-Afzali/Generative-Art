@@ -5,6 +5,11 @@ output: html_notebook
 
 ## Introduction
 
+Generative Art is a process of algorithmically generating new ideas, forms, shapes, colors or patterns. First, you create rules that provide boundaries for the creation process. Then a computer  follows those rules to produce new works on your behalf.  
+
+In contrast to traditional artists who may spend days or even months exploring one idea,  generative code artists use computers to generate thousands of ideas in milliseconds. 
+
+Generative artists leverage modern processing power to invent new aesthetics – instructing programs to run within a set of artistic constraints, and guiding the process to a desired result. 
 
 Data can be not only useful but also beautiful. This article points to some of the starting points for those who want to explore generative art in R.
 
@@ -47,10 +52,12 @@ aRtsy aims to make generative art accessible to the general public in a straight
 
 ## References
 
-https://towardsdatascience.com/getting-started-with-generative-art-in-r-3bc50067d34b
+[generative-art-design](https://aiartists.org/generative-art-design)
 
-https://generative.substack.com/p/generative-art-and-r
+[getting-started-with-generative-art-in-r](https://towardsdatascience.com/getting-started-with-generative-art-in-r-3bc50067d34b)
 
-https://github.com/koenderks/aRtsy
+[generative-art-and-r](https://generative.substack.com/p/generative-art-and-r)
 
-https://blog.djnavarro.net/posts/2021-07-08_generative-art-in-r/
+[aRtsy](https://github.com/koenderks/aRtsy)
+
+[generative-art-in-r](https://blog.djnavarro.net/posts/2021-07-08_generative-art-in-r/)
