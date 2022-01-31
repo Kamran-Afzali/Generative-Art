@@ -1,38 +1,49 @@
 ---
 title: "R Notebook"
 output: html_notebook
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
 ## Introduction
 
-Generative Art is a process of algorithmically generating new ideas, forms, shapes, colors or patterns. First, you create rules that provide boundaries for the creation process. Then a computer  follows those rules to produce new works on your behalf.  
+Generative Art is a process of algorithmically generating new ideas, forms, shapes, colors or patterns.
+First, you create rules that provide boundaries for the creation process.
+Then a computer follows those rules to produce new works on your behalf.
 
-In contrast to traditional artists who may spend days or even months exploring one idea,  generative code artists use computers to generate thousands of ideas in milliseconds. 
+In contrast to traditional artists who may spend days or even months exploring one idea, generative code artists use computers to generate thousands of ideas in milliseconds.
 
-Generative artists leverage modern processing power to invent new aesthetics – instructing programs to run within a set of artistic constraints, and guiding the process to a desired result. 
+Generative artists leverage modern processing power to invent new aesthetics -- instructing programs to run within a set of artistic constraints, and guiding the process to a desired result.
 
-Data can be not only useful but also beautiful. This article points to some of the starting points for those who want to explore generative art in R.
+Data can be not only useful but also beautiful.
+This article points to some of the starting points for those who want to explore generative art in R.
 
-Generative art represents the involvement of a human-independent system (such as an algorithm) in a creative process. Such a system is a key element within the creative process, including its outputs.
-Unsurprisingly, there are many “tools” you can use if you want to delve into generative art. In case you want to have “hands-on” experience in R, there are two basic directions you can go.
-If you are a person proficient in working with code, you may write your code straight away. I dare to argue that this is the way of the “individual” expression as it allows for more flexibility, and, well, freedom.
-However, getting to that point takes time. Luckily, you can begin experimenting with your pieces of generative art by using one of the existing packages. Not only it could be quite rewarding, but it also works perfectly for grasping the basics of the “trade”.
-In this article, I am going to present to you some of the “ready-to-use” packages for making generative art. Also, I will tap into some of the examples of using general packages or libraries to arrive at the same goal.
+Generative art represents the involvement of a human-independent system (such as an algorithm) in a creative process.
+Such a system is a key element within the creative process, including its outputs.
+Unsurprisingly, there are many "tools" you can use if you want to delve into generative art.
+In case you want to have "hands-on" experience in R, there are two basic directions you can go.
+If you are a person proficient in working with code, you may write your code straight away.
+I dare to argue that this is the way of the "individual" expression as it allows for more flexibility, and, well, freedom.
+However, getting to that point takes time.
+Luckily, you can begin experimenting with your pieces of generative art by using one of the existing packages.
+Not only it could be quite rewarding, but it also works perfectly for grasping the basics of the "trade".
+In this article, I am going to present to you some of the "ready-to-use" packages for making generative art.
+Also, I will tap into some of the examples of using general packages or libraries to arrive at the same goal.
 
+Outside of data visualization, more abstract pieces are created.
+I'd say data is still important, but the information is more hidden or being described in a dimension that isn't easily understood.
 
-Outside of data visualization, more abstract pieces are created. I'd say data is still important, but the information is more hidden or being described in a dimension that isn't easily understood.
-
-My first encounter was finding the website by Antonio Chinchon of Fronkonstin. Who I have found has created some wonderful blog posts describing in detail the process of the work that he has created using R.
-
+My first encounter was finding the website by Antonio Chinchon of Fronkonstin.
+Who I have found has created some wonderful blog posts describing in detail the process of the work that he has created using R.
 
 And there are many more, Thomas Pedersen, Danielle Navarro, Paul Vanderlaken, or Antonio Chinchon, and others who have created art in the R space.
 
 So even though this tool has always been more about data processing than creating; I think there are a few interesting arguments that using R might be another great tool for generative art.
 
-
 ## General-purpose packages
-In many instances, previously mentioned packages built on more generally used packages such as magritr (the pipeline operator comes in handy even in the art creation), ggplot, dplyr, or purr.
 
+In many instances, previously mentioned packages built on more generally used packages such as magritr (the pipeline operator comes in handy even in the art creation), ggplot, dplyr, or purr.
 
 ```{r}
 library(tidyverse)
@@ -43,7 +54,6 @@ seq(from=0, to=10, by = 0.01) %>%
   theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 ```
 
-
 ```{r}
 library(tidyverse)
 seq(from=0, to=10, by = 0.01) %>%
@@ -53,13 +63,13 @@ seq(from=0, to=10, by = 0.01) %>%
   theme_void()+coord_fixed()+ theme(panel.background = element_rect(fill = 'black', colour = 'black'))
 ```
 
-
-
-
 ## generativeart
 
 The first package I would like to present is called simply generativeart.
-One of its key features is the way how it structures the output files. In order to get the output files, you have to specify the location where they will be stored. Also, it iterates on the provided formula that doesn’t need to be supported with a seed. In this scenario, each of the outcome files is unique.
+One of its key features is the way how it structures the output files.
+In order to get the output files, you have to specify the location where they will be stored.
+Also, it iterates on the provided formula that doesn't need to be supported with a seed.
+In this scenario, each of the outcome files is unique.
 
 ```{r}
 library(generativeart)
@@ -126,7 +136,7 @@ generativeart::generate_img(formula = my_formula2,
 
 Danielle Navarro, the author of the Learning Statistics with R Learning Statistics with R handbook, is a well-known person among psychology students.
 Besides her teaching and research activities at the University of Adelaide, she also released the jasmines package, a tool allowing for creating a generative art in R.
-This package gives you an opportunity to play with simulation parameters (e.g. grain or interaction), shapes (e.g. entity_circle or scene_discs) and their modifications (like style_ribbon) or colours (palette or alpha). 
+This package gives you an opportunity to play with simulation parameters (e.g. grain or interaction), shapes (e.g. entity_circle or scene_discs) and their modifications (like style_ribbon) or colours (palette or alpha).
 
 ```{r}
 p3 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which is useful for creating simulations or random objects that can be reproduced.
@@ -150,10 +160,26 @@ p3 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which i
 p3
 ```
 
-
 ## aRtsy
 
-aRtsy aims to make generative art accessible to the general public in a straightforward and standardized manner. The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set seed. Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.
+aRtsy aims to make generative art accessible to the general public in a straightforward and standardized manner.
+The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set seed.
+Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.
+
+```{r}
+set.seed(1)
+canvas_collatz(colors = colorPalette("tuscany1"))
+
+
+```
+
+```{r}
+
+set.seed(1)
+canvas_nebula(colors = colorPalette("tuscany3"))
+
+```
+
 
 ## References
 

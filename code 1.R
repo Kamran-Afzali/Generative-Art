@@ -318,3 +318,12 @@ generativeart::generate_img(formula = my_formula2,
                             filetype = "png", 
                             color = "white", 
                             background_color = "black")
+
+
+library("aRtsy")
+set.seed(1)
+canvas_collatz(colors = colorPalette("tuscany1"))
+
+
+set.seed(1)
+canvas_nebula(colors = colorPalette("tuscany3"))
