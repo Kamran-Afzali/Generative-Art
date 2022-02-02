@@ -8,41 +8,18 @@ editor_options:
 
 ## Introduction
 
-Generative Art is a process of algorithmically generating new ideas, forms, shapes, colors or patterns.
-First, you create rules that provide boundaries for the creation process.
-Then a computer follows those rules to produce new works on your behalf.
+This article points aims to explore and provide some "hands-on" experience with generative art in R, introducing recent tools and packages in the domain. Generative Art is a process of algorithmically producing new sensory patterns such as sounds, shapes, or forms. First, you create algorithmic rules that provide limits and structure to the creation process. Then a computer follows those rules to produce new works on your behalf. In other words, generative art is the involvement of human-independent systems in a creative process. This contrasts with traditional artistic generation where the majority of creative time is spent exploring one idea, generative code artists use computers to generate thousands of ideas in a short amount of time. Generative artists leverage modern processing power to invent new aesthetics -- instructing programs to run within a set of artistic constraints, and guiding the process to a desired result.
 
-In contrast to traditional artists who may spend days or even months exploring one idea, generative code artists use computers to generate thousands of ideas in milliseconds.
-
-Generative artists leverage modern processing power to invent new aesthetics -- instructing programs to run within a set of artistic constraints, and guiding the process to a desired result.
-
-Data can be not only useful but also beautiful.
-This article points to some of the starting points for those who want to explore generative art in R.
-
-Generative art represents the involvement of a human-independent system (such as an algorithm) in a creative process.
-Such a system is a key element within the creative process, including its outputs.
-Unsurprisingly, there are many "tools" you can use if you want to delve into generative art.
-In case you want to have "hands-on" experience in R, there are two basic directions you can go.
-If you are a person proficient in working with code, you may write your code straight away.
-I dare to argue that this is the way of the "individual" expression as it allows for more flexibility, and, well, freedom.
-However, getting to that point takes time.
-Luckily, you can begin experimenting with your pieces of generative art by using one of the existing packages.
-Not only it could be quite rewarding, but it also works perfectly for grasping the basics of the "trade".
-In this article, I am going to present to you some of the "ready-to-use" packages for making generative art.
-Also, I will tap into some of the examples of using general packages or libraries to arrive at the same goal.
 
 Outside of data visualization, more abstract pieces are created.
 I'd say data is still important, but the information is more hidden or being described in a dimension that isn't easily understood.
-
-My first encounter was finding the website by Antonio Chinchon of Fronkonstin.
-Who I have found has created some wonderful blog posts describing in detail the process of the work that he has created using R.
-
-And there are many more, Thomas Pedersen, Danielle Navarro, Paul Vanderlaken, or Antonio Chinchon, and others who have created art in the R space.
-
 So even though this tool has always been more about data processing than creating; I think there are a few interesting arguments that using R might be another great tool for generative art.
 
-## General-purpose packages
 
+## General-purpose packages
+In case you want to have "hands-on" experience in R, there are two basic directions you can go.
+If you are a person proficient in working with code, you may write your code straight away.
+I dare to argue that this is the way of the "individual" expression as it allows for more flexibility, and, well, freedom.
 In many instances, previously mentioned packages built on more generally used packages such as magritr (the pipeline operator comes in handy even in the art creation), ggplot, dplyr, or purr.
 
 ```{r}
@@ -64,6 +41,10 @@ seq(from=0, to=10, by = 0.01) %>%
 ```
 
 ## generativeart
+
+In this article, I am going to present to you some of the "ready-to-use" packages for making generative art.
+Luckily, you can begin experimenting with your pieces of generative art by using one of the existing packages.
+Not only it could be quite rewarding, but it also works perfectly for grasping the basics of the "trade".
 
 The first package I would like to present is called simply generativeart.
 One of its key features is the way how it structures the output files.
