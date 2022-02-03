@@ -113,6 +113,29 @@ generativeart::generate_img(formula = my_formula2,
                             background_color = "black")
 ```
 
+
+## aRtsy
+
+aRtsy aims to make generative art accessible to the general public in a straightforward and standardized manner.
+The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set seed.
+Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.
+
+```{r}
+set.seed(1)
+canvas_collatz(colors = colorPalette("tuscany1"))
+
+
+```
+
+```{r}
+
+set.seed(1)
+canvas_nebula(colors = colorPalette("tuscany3"))
+
+```
+
+
+
 ## jasmines
 
 Danielle Navarro, the author of the Learning Statistics with R Learning Statistics with R handbook, is a well-known person among psychology students.
@@ -140,27 +163,6 @@ p3 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which i
   )
 p3
 ```
-
-## aRtsy
-
-aRtsy aims to make generative art accessible to the general public in a straightforward and standardized manner.
-The package provides algorithms for creating artworks that incorporate some form of randomness and are dependent on the set seed.
-Each algorithm is implemented in a separate function with its own set of parameters that can be tweaked.
-
-```{r}
-set.seed(1)
-canvas_collatz(colors = colorPalette("tuscany1"))
-
-
-```
-
-```{r}
-
-set.seed(1)
-canvas_nebula(colors = colorPalette("tuscany3"))
-
-```
-
 
 ## References
 
