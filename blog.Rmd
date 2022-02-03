@@ -17,10 +17,7 @@ So even though this tool has always been more about data processing than creatin
 
 
 ## General-purpose packages
-In case you want to have "hands-on" experience in R, there are two basic directions you can go.
-If you are a person proficient in working with code, you may write your code straight away.
-I dare to argue that this is the way of the "individual" expression as it allows for more flexibility, and, well, freedom.
-In many instances, previously mentioned packages built on more generally used packages such as magritr (the pipeline operator comes in handy even in the art creation), ggplot, dplyr, or purr.
+In many instances, generative art algorithms are built on widely used R packages such as magritr, ggplot, dplyr, or purr. In case you want to have coding experience in R you may write your generative algorithm straight away. Artistic expression through your own code allows for more flexibility and creative freedom.
 
 ```{r}
 library(tidyverse)
@@ -42,15 +39,9 @@ seq(from=0, to=10, by = 0.01) %>%
 
 ## generativeart
 
-In this article, I am going to present to you some of the "ready-to-use" packages for making generative art.
-Luckily, you can begin experimenting with your pieces of generative art by using one of the existing packages.
-Not only it could be quite rewarding, but it also works perfectly for grasping the basics of the "trade".
+There are also some "ready-to-use" packages that facilitate making generative art.
+Beginners can start experimenting with pieces of generative art by using one of the existing algorithms. The first package we are going to present is generativeart. That facilitates the way how the output files are organized. In order to get the output files, you have to specify the location where they will be stored. Also, the package iterates on the provided formula that doesn't need to be supported with a seed.
 
-The first package I would like to present is called simply generativeart.
-One of its key features is the way how it structures the output files.
-In order to get the output files, you have to specify the location where they will be stored.
-Also, it iterates on the provided formula that doesn't need to be supported with a seed.
-In this scenario, each of the outcome files is unique.
 
 ```{r}
 library(generativeart)
