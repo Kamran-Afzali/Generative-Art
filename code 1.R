@@ -1,4 +1,7 @@
-#http://fronkonstin.com
+
+
+
+######## tidyverse
 
 library(tidyverse)
 seq(from=0, to=10, by = 0.01) %>%
@@ -84,7 +87,7 @@ library(tidyverse)
 tibble(x=accumulate(1:2300,~.x+((0.98)^.y)*cos(.y*(pi/2)^1.015),.init=0),y=accumulate(1:2300,~.x+((0.98)^.y)*sin(.y*(pi/2)^1.015),.init=0))%>%
   ggplot(aes(x,y)) + geom_polygon() + coord_equal() + theme_void()
 
-
+######## image transformation in R
 library(tidyverse)
 library(imager)
 
@@ -137,6 +140,8 @@ plot
 
 ggsave("LH_tiled.png", plot, height =  8 , width =  6)
 
+
+######### jasmines
 library(dplyr) # or install.packages("dplyr") first
 library(jasmines)
 p0 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which is useful for creating simulations or random objects that can be reproduced.
@@ -253,7 +258,7 @@ p4 <- use_seed(100) %>% # Set the seed of R‘s random number generator, which i
 p4
 
 
-
+######### generativeart
 devtools::install_github("cutterkom/generativeart")
 library(generativeart)
 my_formula <- list(
@@ -262,8 +267,6 @@ my_formula <- list(
 )
 df=generate_data(my_formula)
 generate_plot(df,polar=F)
-
-
 
 library(ambient)
 library(dplyr)
@@ -290,7 +293,7 @@ my_formula <- list(
 
 
 
-# call the main function to create five images with a polar coordinate system
+
 generativeart::generate_img(formula = my_formula, 
                             nr_of_img = 5, # set the number of iterations
                             polar = TRUE, 
@@ -318,7 +321,7 @@ generativeart::generate_img(formula = my_formula2,
                             filetype = "png", 
                             color = "white", 
                             background_color = "black")
-
+#############aRtsy
 
 library("aRtsy")
 set.seed(1)
@@ -327,3 +330,9 @@ canvas_collatz(colors = colorPalette("tuscany1"))
 
 set.seed(1)
 canvas_nebula(colors = colorPalette("tuscany3"))
+
+
+
+###########Some references
+
+#http://fronkonstin.com
