@@ -17,7 +17,7 @@ draw_u_arc <- function(center_x, center_y, r_min, r_max,
                        n_lines = 12,
                        line_spacing = 0.012,
                        line_color = "#203e2d",
-                       line_width = 2.5) {
+                       line_width = 3.5) {
   
   for (i in 0:(n_lines - 1)) {
     r <- r_min + i * line_spacing
@@ -76,13 +76,15 @@ draw_u_arc <- function(center_x, center_y, r_min, r_max,
 
 
 # Top cluster: left to right U
-draw_u_arc(center_x = 0.15, center_y = 0.50, r_min = 0.015, r_max = 0.015 + (n_lines - 1) * line_spacing, direction = "right")
-
-draw_u_arc(center_x = 0.15, center_y = 0.50, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "left",arc_open = "right",line_color ="#f4e8d3",line_width = 6)
-
+draw_u_arc(center_x = 0.15, center_y = 0.50, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "right")
 draw_u_arc(center_x = 0.15, center_y = 0.50, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "left",arc_open = "right")
 
-
 draw_u_arc(center_x = 0.50, center_y = 0.150, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "down", orientation = "vertical")
-draw_u_arc(center_x = 0.50, center_y = 0.150, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "up", orientation = "vertical",arc_curve = "convex",line_color ="#f4e8d3",line_width = 6)
+draw_u_arc(center_x = 0.50, center_y = 0.150, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "up", orientation = "vertical",arc_curve = "convex",line_color ="#f4e8d3",line_width = 4)
 draw_u_arc(center_x = 0.50, center_y = 0.150, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "up", orientation = "vertical",arc_curve = "convex")
+
+
+draw_u_arc(center_x = 0.80, center_y = 0.80, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "left",arc_open = "right",line_color ="#f4e8d3",line_width = 4)
+draw_u_arc(center_x = 0.80, center_y = 0.80, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "left",arc_open = "right")
+draw_u_arc(center_x = 0.80, center_y = 0.80, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "right",line_color ="#f4e8d3",line_width = 4)
+draw_u_arc(center_x = 0.80, center_y = 0.80, r_min = 0.02, r_max = 0.02 + (n_lines - 1) * line_spacing, direction = "right")
